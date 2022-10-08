@@ -17,7 +17,8 @@ use App\Http\Controllers\Admin\v1\ApplicationsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   // return view('welcome');
+	return redirect()->route('FirstForm');
 });
 
 Auth::routes();
