@@ -6,6 +6,9 @@
     label.error {
         color: red;
     }
+    span.required {
+        color: red;
+    }
 </style>
 
 <div class="container">
@@ -23,8 +26,9 @@
                 <input type="hidden" id="applicantion_id" name="application_id" value="{{ $data->id }}">
                 <div class="col-xs-12 col-md-6">
                     <label for="">Name of the bank:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="bank_name" name="bank_name" class="form-control" value="{{ $data->b_bank_type ?? '' }}"
                                 placeholder="Name of the bank" aria-label="Name of the bank" />
                         </div>
@@ -32,8 +36,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6 col-lg-6">
                     <label for="">Vehicle No:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="vehicle_no" name="vehicle_no" class="form-control" value="{{ $data['vehicle']['registration_no'] ?? '' }}"
                                 placeholder="Vehicle No" aria-label="Vehicle No" />
                         </div>
@@ -41,8 +46,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Customer Mobile No:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="customer_mobile" name="customer_mobile" class="form-control" value="{{ $data->applicant_contact ?? '' }}"
                                 placeholder="Customer Mobile No" aria-label="Customer Mobile No" />
                         </div>
@@ -50,8 +56,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Customer Confirmation:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <select name="customer_confirmation" class="form-select co-applicant"
                                 id="customer_confirmation">
                                 <option value="yes">Yes</option>
@@ -62,8 +69,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Vehicle Type:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <select name="vehicle_type" id="vehicle_type"
                                 class="form-select">
                                 <option value="" {{ $data['vehicle']['vehicle_type'] == NULL ? "selected" : "" }}>Select Type</option>
@@ -76,8 +84,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Make</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="make" name="make" class="form-control" value="{{ $data['vehicle']['make'] ?? '' }}"
                                 placeholder="Make" aria-label="Make" />
                         </div>
@@ -85,8 +94,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Model</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="model" name="model" class="form-control" value="{{ $data['vehicle']['model'] ?? '' }}"
                                 placeholder="Model" aria-label="Model" />
                         </div>
@@ -94,8 +104,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Variant</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="variant" name="variant" class="form-control" value="{{ $data['vehicle']['variant'] ?? '' }}"
                                 placeholder="Variant" aria-label="Variant" />
                         </div>
@@ -103,8 +114,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Year of Manufacturing</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="year_of_manufacturing" name="year_of_manufacturing" class="form-control" value="{{ $data['vehicle']['year_of_manufacturing'] ?? '' }}"
                                 placeholder="Year of Manufacturing" aria-label="Year of Manufacturing" />
                         </div>
@@ -112,8 +124,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Loan Amount:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="loan_amount" name="loan_amount" class="form-control" value="{{ $data['vehicle']['finance_amount'] ?? '' }}"
                                 placeholder="Loan Amount" aria-label="Loan Amount" />
                         </div>
@@ -121,8 +134,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Loan Variation Amount</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="loan_variation_amount" name="loan_variation_amount" class="form-control"
                                 placeholder="Loan Variation Amount" aria-label="Loan Variation Amount" />
                         </div>
@@ -130,28 +144,32 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">EMI Month:</label>
-                    <select class="form-control form-select"
-                        name="emi_month"
-                        id="emi_month">
-                        <option value="">Select Months</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <select class="form-control form-select"
+                            name="emi_month"
+                            id="emi_month">
+                            <option value="">Select Months</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">EMI Amount:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="emi_amount" name="emi_amount" class="form-control"
                                 placeholder="EMI Amount" aria-label="EMI Amount" />
                         </div>
@@ -159,8 +177,9 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">EMI Starting Date:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <span class="required">*</span>
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="date" id="emi_starting_date" name="emi_starting_date" class="form-control"
                                 placeholder="EMI Starting Date" aria-label="EMI Starting Date" />
                         </div>
@@ -170,18 +189,20 @@
                 
                 <div class="col-xs-12 col-md-6">
                     <label for="">SMS Send option</label>
-                    <select class="form-control form-select"
-                        name="sms_send_option"
-                        id="sms_send_option">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      
-                    </select>
+                    <div class="mb-3">
+                        <select class="form-control form-select"
+                            name="sms_send_option"
+                            id="sms_send_option">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        
+                        </select>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Processing Fee:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="processing_fee" name="processing_fee" class="form-control"
                                 placeholder="Processing Fee" aria-label="Processing Fee" />
                         </div>
@@ -189,8 +210,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Stamp Duty:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="stamp_duty" name="stamp_duty" class="form-control"
                                 placeholder="Stamp Duty" aria-label="Stamp Duty" />
                         </div>
@@ -198,8 +219,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Document Charge:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="document_charge" name="document_charge" class="form-control"
                                 placeholder="Document Charge" aria-label="Document Charge"/>
                         </div>
@@ -207,8 +228,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">PDD Charge:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="pdd_charge" name="pdd_charge" class="form-control"
                                 placeholder="PDD Charge" aria-label="PDD Charge"/>
                         </div>
@@ -216,8 +237,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Other Charge:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="other_charge" name="other_charge" class="form-control"
                                 placeholder="Other Charge" aria-label="Other Charge"/>
                         </div>
@@ -225,8 +246,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Valuation:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="valuation" name="valuation" class="form-control"
                                 placeholder="Valuation" aria-label="Valuation"/>
                         </div>
@@ -234,18 +255,20 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Loan Suraksha (Insurance)</label>
-                    <select class="form-control form-select"
-                        name="insurance"
-                        id="insurance">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      
-                    </select>
+                    <div class="mb-3">
+                        <select class="form-control form-select"
+                            name="insurance"
+                            id="insurance">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        
+                        </select>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Loan Suraksha Amount:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="insurance_amount" name="insurance_amount" class="form-control"
                                 placeholder="Loan Suraksha Amount" aria-label="Loan Suraksha Amount"/>
                         </div>
@@ -253,8 +276,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">M I Funding (Insurance):</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="insurance_funding" name="insurance_funding" class="form-control"
                                 placeholder="M I Funding (Insurance)" aria-label="M I Funding (Insurance)"/>
                         </div>
@@ -262,8 +285,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Payment Receivable From Bank:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="payment_receivable" name="payment_receivable" class="form-control"
                                 placeholder="Payment Receivable From Bank" aria-label="Payment Receivable From Bank"/>
                         </div>
@@ -271,8 +294,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">RTO Tax:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="rto_tax" name="rto_tax" class="form-control"
                                 placeholder="RTO Tax" aria-label="RTO Tax"/>
                         </div>
@@ -280,8 +303,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">RTO Charges:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="rto_charges" name="rto_charges" class="form-control"
                                 placeholder="RTO Charges" aria-label="RTO Charges"/>
                         </div>
@@ -289,8 +312,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">RTO Paper Status:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="rto_paper_status" name="rto_paper_status" class="form-control"
                                 placeholder="RTO Paper Status" aria-label="RTO Paper Status"/>
                         </div>
@@ -298,8 +321,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">NET Payment:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="net_payment" name="net_payment" class="form-control"
                                 placeholder="NET Payment" aria-label="NET Payment"/>
                         </div>
@@ -307,8 +330,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for=""> Payment FAVOUR Of:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="payment_favour" name="payment_favour" class="form-control"
                                 placeholder="Payment FAVOUR Of" aria-label="Payment FAVOUR Of"/>
                         </div>
@@ -316,8 +339,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">Commission To:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="commision_to" name="commision_to" class="form-control"
                                 placeholder="Commision To" aria-label="Commision To"/>
                         </div>
@@ -325,8 +348,8 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <label for="">With GST/Without GST:</label>
-                    <div>
-                        <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <div class="input-group">
                             <input type="text" id="gst" name="gst" class="form-control"
                                 placeholder="With GST/Without GST" aria-label="With GST/Without GST"/>
                         </div>
@@ -353,30 +376,75 @@
         e.preventDefault();
         secondForm.validate({
             rules: {
-                customer_mobile: {
+                bank_name: {
+                    required: true
+                },
+                vehicle_no: {
+                    required: true,
                     number: true
                 },
+                customer_mobile: {
+                    required:true,
+                    number: true
+                },
+                vehicle_type: {
+                    required: true
+                },
+                make: {
+                    required: true
+                },
+                model: {
+                    required: true
+                },
+                variant: {
+                    required: true
+                },
                 year_of_manufacturing: {
+                    required: true,
                     digits: true,
                     minlength: 4,
                     maxlength: 4
                 },
-                loan_variation_amount: {
+                loan_amount: {
+                    required: true,
                     number: true
+                },
+                loan_variation_amount: {
+                    required: true,
+                    number: true
+                },
+                emi_month: {
+                    required: true
                 },
                 emi_amount: {
+                    required: true,
                     number: true
+                },
+                emi_starting_date: {
+                    required: true
                 },
                 processing_fee: {
-                    number: true
-                },
-                stamp_duty: {
                     number: true
                 },
                 document_charge: {
                     number: true
                 },
+                pdd_charge: {
+                    number: true
+                },
+                other_charge: {
+                    number: true
+                },
                 valuation: {
+                    number: true
+                },
+                insurance_amount: {
+                    number: true
+                },
+                insurance_funding: {
+                    number: true
+                },
+                rto_charges: {
                     number: true
                 },
                 net_payment: {
@@ -384,38 +452,83 @@
                 }
             },
             messages: {
-                // customer_mobile : {
-                //     number : "Please enter a valid customer mobile no."
-                // },
-                // year_of_manufacturing : {
-                //     email : "Please enter a valid year.",
-                //     minlength: "It accepts only 4 digits.",
-                //     maxlength: "It accepts only 4 digits.",
-                // },
-                // loan_variation_amount : {
-                //     number : "Please enter a valid loan variation amount."
-                // },
-                // emi_amount : {
-                //     number : "Please enter a valid EMI amount."
-                // },
-                // processing_fee : {
-                //     number : "Please enter a valid processing_fee."
-                // },
-                // stamp_duty : {
-                //     number : "Please enter a valid stamp duty."
-                // },
-                // document_charge : {
-                //     number : "Please enter a valid document charge."
-                // },
-                // valuation : {
-                //     number : "Please enter a valid valuation."
-                // },
-                // net_payment : {
-                //     number : "Please enter a valid net payment."
-                // },
+                bank_name: {
+                    required: "Bank Name is required."
+                },
+                vehicle_no: {
+                    required: "Vehicle No. is required.",
+                    number: "Please enter a valid vehicle no."
+                },
+                customer_mobile: {
+                    required: "Customer Mobile No. is required.",
+                    number: "Please enter a valid customer mobile no."
+                },
+                vehicle_type: {
+                    required: "Vehicle Type is required."
+                },
+                make: {
+                    required: "Make is required."
+                },
+                model: {
+                    required: "Model is required."
+                },
+                variant: {
+                    required: "Variant is required."
+                },
+                year_of_manufacturing: {
+                    required: "Year of Manufacturing is required.",
+                    digits : "Please enter a valid year.",
+                    minlength: "It accepts only 4 digits.",
+                    maxlength: "It accepts only 4 digits.",
+                },
+                loan_amount: {
+                    required: "Loan Amount is required.",
+                    number: "Please enter a valid loan amount."
+                },
+                loan_variation_amount: {
+                    required: "Loan Variation Amount is required.",
+                    number: "Please enter a valid loan variation amount."
+                },
+                emi_month: {
+                    required: "EMI Month is required."
+                },
+                emi_amount: {
+                    required: "EMI Amount is required.",
+                    number: "Please enter a valid EMI amount."
+                },
+                emi_starting_date: {
+                    required: "EMI Starting Date is required."
+                },
+                processing_fee: {
+                    number: "Please enter a valid processing fee."
+                },
+                document_charge: {
+                    number: "Please enter a valid document charge."
+                },
+                pdd_charge: {
+                    number: "Please enter a valid PDD charge."
+                },
+                other_charge: {
+                    number: "Please enter a valid other charge."
+                },
+                valuation: {
+                    number: "Please enter a valid valuation."
+                },
+                insurance_amount: {
+                    number: "Please enter a valid insurance amount."
+                },
+                insurance_funding: {
+                    number: "Please enter a valid insurance funding."
+                },
+                rto_charges: {
+                    number: "Please enter a valid RTO charges."
+                },
+                net_payment: {
+                    number: "Please enter a valid NET payment."
+                }
             },errorPlacement: function(error, element)
             {
-                error.insertBefore( element.parent() );
+                error.insertAfter( element.parent() );
             }
         });
         

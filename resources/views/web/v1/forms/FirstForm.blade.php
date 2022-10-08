@@ -6,6 +6,9 @@
     label.error {
         color: red;
     }
+    span.required {
+        color: red;
+    }
 </style>
 
     <div class="container">
@@ -20,19 +23,22 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Source DD:</label>
-                                <select class="form-control form-select"
-                                    name="source_type"
-                                    id="source_type">
-                                    <option value="telecaller">Telecaller</option>
-                                    <option value="broker">Broker</option>
-                                    <option value="direct">Direct</option>
-                                    <option value="refferal">Refferal</option>
-                                </select>
+                                <span class="required">*</span>
+                                <div class="mb-3">
+                                    <select class="form-control form-select"
+                                        name="source_type"
+                                        id="source_type">
+                                        <option value="telecaller">Telecaller</option>
+                                        <option value="broker">Broker</option>
+                                        <option value="direct">Direct</option>
+                                        <option value="refferal">Refferal</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" id="source_name" name="source_name" class="form-control"
                                             placeholder="Name" aria-label="Name" />
                                     </div>
@@ -40,8 +46,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Email:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" id="source_email" name="source_email" class="form-control"
                                             placeholder="Email" aria-label="Email" />
                                     </div>
@@ -49,8 +55,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">GST NO: (If have)</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" id="source_gst_no" name="source_gst_no" class="form-control"
                                             placeholder="GST No" aria-label="GST No" />
                                     </div>
@@ -58,8 +64,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Contact No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" id="source_contact" name="source_contact" class="form-control"
                                             placeholder="Contact No" aria-label="Contact No" />
                                     </div>
@@ -75,8 +81,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Finance/Bank Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" id="b_bank_type"
                                             placeholder="Finance/Bank Type:" name="b_bank_type" aria-label="Finance/Bank Type:" />
                                     </div>
@@ -84,8 +90,8 @@
                             </div>
                             <div class="col-xs-12 col-md-3">
                                 <label for="">Profile Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select class="form-control form-select"
                                             name="b_profile_type"
                                             id="b_profile_type">
@@ -97,8 +103,8 @@
                             </div>
                             <div class="col-xs-12 col-md-3" id="other-dd">
                                 <label for="">Other DD:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select class="form-control form-select"
                                             name="b_other_dd_type"
                                             id="b_other_dd_type">
@@ -113,8 +119,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Company Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             id="b_company_name" placeholder="Company Name"
                                             name="b_company_name"
@@ -124,8 +130,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Company Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select class="form-control form-select" name="b_company_type"
                                             id="b_company_type">
                                             <option value="private_limited">Private Limited</option>
@@ -147,8 +153,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Main Applicant:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="applicant_name"
                                             id="applicant_name"
@@ -158,8 +164,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Designation Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select class="form-control form-select" name="applicant_designation_type"
                                             id="applicant_designation_type">
                                             <option value="">Select Type</option>
@@ -173,8 +179,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Contact Person:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="applicant_contact_person"
                                             id="applicant_contact_person" placeholder="Contact Person"
@@ -184,8 +190,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Contact No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="applicant_contact"
                                             id="applicant_contact" placeholder="Contact No"
@@ -195,8 +201,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Other Contact No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             id="applicant_other_contact"
                                             name="applicant_other_contact"
@@ -206,8 +212,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Email ID:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="email" class="form-control"
                                             name="applicant_email"
                                             id="applicant_email" placeholder="Email"
@@ -217,8 +223,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Date Of Birth:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="date" class="form-control"
                                             name="applicant_dob"
                                             id="applicant_dob" placeholder="Date Of Birth"
@@ -236,8 +242,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Resident Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="resident_type" class="form-control form-select"
                                             id="resident_type">
                                             <option value="owned">Owned</option>
@@ -251,8 +257,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="rc_address"
                                             id="rc_address"
                                             placeholder="Current Address" aria-label="Current Address" />
@@ -261,8 +267,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Area:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rc_area"
                                             id="rc_area" placeholder="Area"
@@ -272,8 +278,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">City:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rc_city"
                                             id="rc_city" placeholder="City"
@@ -283,8 +289,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">State:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rc_state"
                                             id="rc_state" placeholder="State"
@@ -297,8 +303,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rp_address"
                                             id="rp_address" placeholder="Permanent Address"
@@ -308,8 +314,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Area:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rp_area"
                                             id="rp_area" placeholder="Area"
@@ -319,8 +325,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">City:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rp_city"
                                             id="rp_city" placeholder="City"
@@ -330,8 +336,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">State:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="rp_state"
                                             id="rp_state" placeholder="State"
@@ -349,8 +355,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Company Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_company_name"
                                             id="o_company_name" placeholder="Company Name" />
                                     </div>
@@ -358,8 +364,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Office Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_address"
                                             id="o_address" placeholder="Office Address"
                                             aria-label="Office Address" />
@@ -368,8 +374,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Area:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_area"
                                             id="o_area" placeholder="Area"
                                             aria-label="Area" />
@@ -378,8 +384,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">City:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_city"
                                             id="o_city" placeholder="City"
                                             aria-label="City" />
@@ -388,8 +394,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">State:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_state"
                                             id="o_state" placeholder="State"
                                             aria-label="State" />
@@ -398,8 +404,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Landmark:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_landmark"
                                             id="o_landmark" placeholder="Landmark"
                                             aria-label="Landmark" />
@@ -408,8 +414,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Pincode:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="o_pincode"
                                             id="o_pincode" placeholder="Pincode"
                                             aria-label="Pincode" />
@@ -427,8 +433,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" id="ref_name[0]"
                                         name="ref_name[0]"
                                             placeholder="Name" />
@@ -437,8 +443,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control"
                                             name="ref_address[0]"
                                             id="ref_address[0]" placeholder="Address"
@@ -448,8 +454,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Mobile No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="ref_mobile[0]"
                                             id="ref_mobile[0]" placeholder="Mobile No"
                                             aria-label="Mobile No" />
@@ -458,8 +464,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Relationship:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="ref_relationship[0]" id="ref_relationship[0]"
                                             class="form-select">
                                             <option value="">Select Relationship</option>
@@ -478,8 +484,8 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Name:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" id="ref_name[1]"
                                             name="ref_name[1]"
                                                 placeholder="Name" />
@@ -488,8 +494,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Address:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control"
                                                 name="ref_address[1]"
                                                 id="ref_address[1]" placeholder="Address"
@@ -499,8 +505,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Mobile No:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="ref_mobile[1]"
                                                 id="ref_mobile[1]" placeholder="Mobile No"
                                                 aria-label="Mobile No" />
@@ -509,8 +515,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Relationship:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <select name="ref_relationship[1]" id="ref_relationship[1]"
                                                 class="form-select">
                                                 <option value="">Select Relationship</option>
@@ -540,8 +546,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Co-applicant:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="co_applicant[0]" class="form-select co-applicant0"
                                             id="co_applicant[0]">
                                             <option value="yes">Yes</option>
@@ -552,8 +558,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_name[0]"
                                             id="co_applicant_name[0]" placeholder="Name"
                                             aria-label="Name" />
@@ -562,8 +568,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_address[0]"
                                             id="co_applicant_address[0]" placeholder="Address"
                                             aria-label="Address" />
@@ -572,8 +578,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Mobile No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_mobile[0]"
                                             id="co_applicant_mobile[0]" placeholder="Mobile No"
                                             aria-label="Mobile No" />
@@ -582,8 +588,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Relationship:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="co_applicant_relationship[0]" id="co_applicant_relationship[0]"
                                             class="form-select co-applicant-option0">
                                             <option value="">Select Relationship</option>
@@ -600,8 +606,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Company Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_company_name[0]"
                                             id="co_applicant_company_name[0]" placeholder="Company Name" />
                                     </div>
@@ -609,8 +615,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Company Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_company_address[0]"
                                             id="co_applicant_company_address[0]" placeholder="Company Address"
                                             aria-label="Company Address" />
@@ -619,8 +625,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Area:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_area[0]"
                                             id="co_applicant_area[0]" placeholder="Area"
                                             aria-label="Area" />
@@ -629,8 +635,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">City:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_city[0]"
                                             id="co_applicant_city[0]" placeholder="City"
                                             aria-label="City" />
@@ -639,8 +645,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">State:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_state[0]"
                                             id="co_applicant_state[0]" placeholder="State"
                                             aria-label="State" />
@@ -649,8 +655,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Landmark:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_landmark[0]"
                                             id="co_applicant_landmark[0]" placeholder="Landmark"
                                             aria-label="Landmark" />
@@ -659,8 +665,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option0">
                                 <label for="">Pincode:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option0" name="co_applicant_pincode[0]"
                                             id="co_applicant_pincode[0]" placeholder="Pincode"
                                             aria-label="Pincode" />
@@ -672,8 +678,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Co-applicant:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="co_applicant[1]" class="form-select co-applicant1"
                                             id="co_applicant[1]">
                                             <option value="yes">Yes</option>
@@ -684,8 +690,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_name[1]"
                                             id="co_applicant_name[1]" placeholder="Name"
                                             aria-label="Name" />
@@ -694,8 +700,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_address[1]"
                                             id="co_applicant_address[1]" placeholder="Address"
                                             aria-label="Address" />
@@ -704,8 +710,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Mobile No:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_mobile[1]"
                                             id="co_applicant_mobile[1]" placeholder="Mobile No"
                                             aria-label="Mobile No" />
@@ -714,8 +720,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Relationship:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="co_applicant_relationship[1]" id="co_applicant_relationship[1]"
                                             class="form-select co-applicant-option1">
                                             <option value="">Select Relationship</option>
@@ -732,8 +738,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Company Name:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_company_name[1]"
                                             id="co_applicant_company_name[1]" placeholder="Company Name" />
                                     </div>
@@ -741,8 +747,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Company Address:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_company_address[1]"
                                             id="co_applicant_company_address[1]" placeholder="Company Address"
                                             aria-label="Company Address" />
@@ -751,8 +757,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Area:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_area[1]"
                                             id="co_applicant_area[1]" placeholder="Area"
                                             aria-label="Area" />
@@ -761,8 +767,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">City:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_city[1]"
                                             id="co_applicant_city[1]" placeholder="City"
                                             aria-label="City" />
@@ -771,8 +777,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">State:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_state[1]"
                                             id="co_applicant_state[1]" placeholder="State"
                                             aria-label="State" />
@@ -781,8 +787,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Landmark:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_landmark[1]"
                                             id="co_applicant_landmark[1]" placeholder="Landmark"
                                             aria-label="Landmark" />
@@ -791,8 +797,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6 co-applicant-option1">
                                 <label for="">Pincode:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control co-applicant-option1" name="co_applicant_pincode[1]"
                                             id="co_applicant_pincode[1]" placeholder="Pincode"
                                             aria-label="Pincode" />
@@ -809,8 +815,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Product Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="product_type" id="product_type"
                                             class="form-select">
                                             <option value="auto_loan">Auto Loan</option>
@@ -825,8 +831,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6" id="auto-loan">
                                 <label for="">Auto Loan:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="autoloan_type" id="autoloan_type"
                                             class="form-select">
                                             <option value="new">New</option>
@@ -841,8 +847,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6" id="home-loan">
                                 <label for="">Home Loan:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="homeloan_type" id="homeloan_type"
                                             class="form-select">
                                             <option value="lap">LAP</option>
@@ -862,8 +868,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Make:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="make"
                                             id="make" placeholder="Make" />
                                     </div>
@@ -871,8 +877,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Vehicle Type:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="vehicle_type" id="vehicle_type"
                                             class="form-select">
                                             <option value="">Select Type</option>
@@ -885,8 +891,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Model:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="model" 
                                             id="model" placeholder="Model" />
                                     </div>
@@ -894,8 +900,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Variant:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="variant"
                                             id="variant" placeholder="Variant" />
                                     </div>
@@ -903,8 +909,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Year of Manufacturing:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="year_of_manufacturing"
                                             id="year_of_manufacturing"
                                             placeholder="Year Of Manufacturing" />
@@ -913,8 +919,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Valuation/Quotation:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="valuation"
                                             id="valuation" placeholder="Valuation/Quotation" />
                                     </div>
@@ -922,8 +928,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Finance Amount:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="finance_amount"
                                             id="finance_amount" placeholder="Finance Amount" />
                                     </div>
@@ -931,8 +937,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Margin:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="margin"
                                             id="margin" placeholder="Margin" />
                                     </div>
@@ -940,8 +946,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Funding in % :</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="funding"
                                             id="funding" placeholder="Funding in %" />
                                     </div>
@@ -949,8 +955,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Scheme Applied :</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="scheme applied"
                                             id="scheme_applied" placeholder="Scheme Applied" />
                                     </div>
@@ -958,8 +964,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Months:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <select name="months" id="months"
                                             class="form-select">
                                             <option value="">Select months</option>
@@ -981,8 +987,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">EMI Account:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="emi_amount"
                                             id="emi_amount" placeholder="EMI Account" />
                                     </div>
@@ -990,8 +996,8 @@
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Customer IRR:</label>
-                                <div>
-                                    <div class="input-group mb-3">
+                                <div class="mb-3">
+                                    <div class="input-group">
                                         <input type="text" class="form-control" name="customer_irr"
                                             id="customer_irr" placeholder="Customer IRR" />
                                     </div>
@@ -1006,8 +1012,8 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Regisration No:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="registration_no"
                                                 id="registration_no"
                                                 placeholder="Regisration No" />
@@ -1016,8 +1022,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Engine No:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="engine_no"
                                                 id="engine_no" placeholder="Engine No" />
                                         </div>
@@ -1025,8 +1031,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Chasis No:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="chasis_no"
                                                 id="chasis_no" placeholder="Chasis No" />
                                         </div>
@@ -1034,8 +1040,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Insurance Company Name:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="insurance_company_name"
                                                 id="insurance_company_name"
                                                 placeholder="Insurance Company Name:" />
@@ -1044,8 +1050,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">IDV:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="idv"
                                                 id="idv" placeholder="IDV:" />
                                         </div>
@@ -1053,8 +1059,8 @@
                                 </div>
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Cover Note/ Policy No:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="text" class="form-control" name="policy_no"
                                                 id="policy_no"
                                                 placeholder="Cover Note/ Policy No:" />
@@ -1064,8 +1070,8 @@
                                 <div class="col-xs-12 col-md-6">
                                     <label for="">Insurance Policy Start
                                         Date:</label>
-                                    <div>
-                                        <div class="input-group mb-3">
+                                    <div class="mb-3">
+                                        <div class="input-group">
                                             <input type="date" class="form-control" name="insurance_policy_start_date"
                                                 id="insurance_policy_start_date"
                                                 placeholder="Insurance Policy Start Date:" />
@@ -1149,75 +1155,367 @@
         e.preventDefault();
         firstForm.validate({
             rules: {
+                source_type: {
+                    required: true
+                },
+                source_name: {
+                    required: true
+                },
                 source_email: {
+                    required: true,
                     email: true
                 },
                 source_contact: {
+                    required: true,
                     number: true
                 },
-                aplicant_contact: {
+
+                b_bank_type: {
+                    required: true
+                },
+                b_profile_type: {
+                    required: true
+                },
+                b_other_dd_type: {
+                    required: function(element){
+                        return $("#b_profile_type").val()=="self_employed";
+                    }
+                },
+                b_company_name: {
+                    required: true
+                },
+                b_company_type: {
+                    required: true
+                },
+
+                applicant_name: {
+                    required: true
+                },
+                applicant_designation_type: {
+                    required: true
+                },
+                applicant_contact_person: {
+                    required: true
+                },
+                applicant_contact: {
+                    required: true,
                     number: true
                 },
-                aplicant_other_contact: {
+                applicant_other_contact: {
                     number: true
                 },
                 applicant_email: {
+                    required: true,
                     email: true
                 },
+
+                resident_type: {
+                    required: true
+                },
+                rc_address: {
+                    required: true
+                },
+                rc_area: {
+                    required: true
+                },
+                rc_city: {
+                    required: true
+                },
+                rc_state: {
+                    required: true
+                },
+                rp_address: {
+                    required: true
+                },
+                rp_area: {
+                    required: true
+                },
+                rp_city: {
+                    required: true
+                },
+                rp_state: {
+                    required: true
+                },
+
+                o_company_name: {
+                    required: true
+                },
+                o_address: {
+                    required: true
+                },
+                o_area: {
+                    required: true
+                },
+                o_city: {
+                    required: true
+                },
+                o_state: {
+                    required: true
+                },
+                o_pincode: {
+                    required: true,
+                    number: true
+                },
+
+                ref_mobile: {
+                    number: true
+                },
+
+                co_applicant_mobile: {
+                    number: true
+                },
+                co_applicant_pincode: {
+                    number: true
+                },
+
+                make: {
+                    required: true
+                },
+                vehicle_type: {
+                    required: true
+                },
+                model: {
+                    required: true
+                },
+                variant: {
+                    required: true
+                },
                 year_of_manufacturing: {
+                    required: true,
                     digits: true,
                     minlength: 4,
                     maxlength: 4
                 },
                 valuation: {
+                    required: true,
                     number: true
                 },
                 finance_amount: {
+                    required: true,
                     number: true
                 },
                 margin: {
+                    required: true,
                     number: true
+                },
+                funding: {
+                    required: true,
+                    number: true
+                },
+                months: {
+                    required: true
                 },
                 emi_amount: {
+                    required: true,
                     number: true
                 },
+
+                registration_no: {
+                    required: true,
+                    number: true
+                },
+                engine_no: {
+                    required: true,
+                    number: true
+                },
+                chasis_no: {
+                    required: true,
+                    number: true
+                },
+                insurance_company_name: {
+                    required: true
+                },
+                idv: {
+                    required: true
+                },
+                policy_no: {
+                    required: true
+                },
+                insurance_policy_start_date: {
+                    required: true
+                }
             },
             messages: {
-                // source_email : {
-                //     email : "Please enter a valid email address."
-                // },
-                // source_contact : {
-                //     number : "Please enter a valid conatct no."
-                // },
-                // applicant_contact : {
-                //     number : "Please enter a valid conatct no."
-                // },
-                // applicant_other_contact : {
-                //     number : "Please enter a valid conatct no."
-                // },
-                // applicant_email : {
-                //     email : "Please enter a valid email address."
-                // },
-                // year_of_manufacturing : {
-                //     email : "Please enter a valid year.",
-                //     minlength: "It accepts only 4 digits.",
-                //     maxlength: "It accepts only 4 digits.",
-                // },
-                // valuation : {
-                //     email : "Please enter a valid valuation."
-                // },
-                // finance_amount : {
-                //     email : "Please enter a valid finance amount."
-                // },
-                // margin : {
-                //     email : "Please enter a valid margin."
-                // },
-                // emi_amount : {
-                //     email : "Please enter a valid EMI amount."
-                // },
+                source_type: {
+                    required: "Source DD is required."
+                },
+                source_name: {
+                    required: "Name is required."
+                },
+                source_email : {
+                    required: "Email is required.",
+                    email : "Please enter a valid email address."
+                },
+                source_contact : {
+                    required: "Contact no. is required.",
+                    number : "Please enter a valid conatct no."
+                },
+
+                b_bank_type: {
+                    required: "Finance/Bank Type is required."
+                },
+                b_profile_type: {
+                    required: "Profile Type is required."
+                },
+                b_other_dd_type: {
+                    required: "Other DD is required."
+                },
+                b_company_name: {
+                    required: "Company Name is required."
+                },
+                b_company_type: {
+                    required: "Company Type is required."
+                },
+                
+                applicant_name: {
+                    required: "Main Applicant is required."
+                },
+                applicant_designation_type: {
+                    required: "Designation Type is required."
+                },
+                applicant_contact_person: {
+                    required: "Contact Person is required."
+                },
+                applicant_contact : {
+                    required: "Contact no. is required.",
+                    number : "Please enter a valid conatct no."
+                },
+                applicant_other_contact : {
+                    number : "Please enter a valid conatct no."
+                },
+                applicant_email : {
+                    required: "Email Id is required.",
+                    email : "Please enter a valid email address."
+                },
+
+                resident_type: {
+                    required: "Resident Type is required."
+                },
+                rc_address: {
+                    required: "Address is required."
+                },
+                rc_area: {
+                    required: "Area is required."
+                },
+                rc_city: {
+                    required: "City is required."
+                },
+                rc_state: {
+                    required: "State is required."
+                },
+                rp_address: {
+                    required: "Address is required."
+                },
+                rp_area: {
+                    required: "Area is required."
+                },
+                rp_city: {
+                    required: "City is required."
+                },
+                rp_state: {
+                    required: "State is required."
+                },
+
+                o_company_name: {
+                    required: "Company Name is required."
+                },
+                o_address: {
+                    required: "Address is required."
+                },
+                o_area: {
+                    required: "Area is required."
+                },
+                o_city: {
+                    required: "City is required."
+                },
+                o_state: {
+                    required: "State is required."
+                },
+                o_pincode: {
+                    required: "Pincode is required.",
+                    number: "Please enter a valid pincode."
+                },
+
+                ref_mobile: {
+                    number: "Please enter a valid Mobile no."
+                },
+
+                co_applicant_mobile: {
+                    number: "Please enter a valid Mobile no."
+                },
+                co_applicant_pincode: {
+                    number: "Please enter a valid pincode."
+                },
+
+                make: {
+                    required: "Make is required."
+                },
+                vehicle_type: {
+                    required: "Vehicle Type is required."
+                },
+                model: {
+                    required: "Model is required."
+                },
+                variant: {
+                    required: "Variant is required."
+                },
+                year_of_manufacturing : {
+                    required: "Year of Manufacturing is required.",
+                    digits : "Please enter a valid year.",
+                    minlength: "It accepts only 4 digits.",
+                    maxlength: "It accepts only 4 digits.",
+                },
+                valuation : {
+                    required: "Valuation is required.",
+                    number : "Please enter a valid valuation."
+                },
+                finance_amount : {
+                    required: "Finance Amount is required.",
+                    number : "Please enter a valid finance amount."
+                },
+                margin : {
+                    required: "Margin is required.",
+                    number : "Please enter a valid margin."
+                },
+                funding: {
+                    required: "Funding is required.",
+                    number: "Please enter a valid funding in."
+                },
+                months: {
+                    required: "Months is required."
+                },
+                emi_amount : {
+                    required: "EMI Amount is required.",
+                    number : "Please enter a valid EMI amount."
+                },
+
+                registration_no: {
+                    required: "Registration no. is required.",
+                    number: "Please enter a valid registration no."
+                },
+                engine_no: {
+                    required: "Engine no. is required.",
+                    number: "Please enter a valid engine no."
+                },
+                chasis_no: {
+                    required: "Chasis no. is required.",
+                    number: "Please enter a valid chasis no."
+                },
+                insurance_company_name: {
+                    required: "Insurance Company Name is required."
+                },
+                idv: {
+                    required: "IdV is required."
+                },
+                policy_no: {
+                    required: "Cover Note/ Policy No. is required."
+                },
+                insurance_policy_start_date: {
+                    required: "Insurance Policy Start Date is required."
+                }
             },errorPlacement: function(error, element)
             {
-                error.insertBefore( element.parent() );
+                error.insertAfter( element.parent() );
             }
         });
 
