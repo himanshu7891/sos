@@ -17,7 +17,7 @@ use App\Http\Controllers\Admin\v1\ApplicationsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('FirstForm');
 });
 
 Auth::routes();
@@ -30,5 +30,7 @@ Route::post('/first-form/submit', [SOSFormsController::class, 'submitFirstForm']
 Route::get('/second-form/{application_id?}', [SOSFormsController::class, 'secondForm'])->name('SecondForm');
 Route::post('/second-form/submit', [SOSFormsController::class, 'submitSecondForm'])->name('secondForm.submit');
 
-Route::get('/application',[ApplicationsController::class, 'index'])->name('application.index');
-Route::post('/change-application-status/{application_id}',[ApplicationsController::class, 'changeApplicationStatus'])->name('change.application.status');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/application',[ApplicationsController::class, 'index'])->name('application.index');
+    Route::post('/change-application-status/{application_id}',[ApplicationsController::class, 'changeApplicationStatus'])->name('change.application.status');
+});
