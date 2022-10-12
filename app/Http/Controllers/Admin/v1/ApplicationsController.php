@@ -20,7 +20,7 @@ class ApplicationsController extends Controller
 
             return Datatables::of($data)
             ->addColumn('application_code', function($data) {
-                return Admin::getApplicationCode($data->id);
+                return $data->application_code;
             })
             ->addColumn('member_code', function($data) {
                 return Admin::getMemberCode($data->member_id);
