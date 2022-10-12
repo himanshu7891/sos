@@ -50,7 +50,8 @@ class CreateDisbursementDetailsTable extends Migration
             $table->string('gst')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-            $table->softDeletes('deleted_at');
+            // $table->softDeletes('deleted_at');
+            $table->softDeletes();
         });
     }
 

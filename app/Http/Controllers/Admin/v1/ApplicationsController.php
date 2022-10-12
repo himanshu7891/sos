@@ -7,6 +7,7 @@ use App\Models\Applications;
 use App\Models\ApplicationStatus;
 use Illuminate\Http\Request;
 use DataTables;
+use Admin;
 
 class ApplicationsController extends Controller
 {
@@ -15,19 +16,14 @@ class ApplicationsController extends Controller
     public function index(Request $request) {
 
         if($request->ajax()) {
-            $data = Applications::select('id','source_type','source_name','source_email','source_gst_no','source_contact','created_at')
-                    ->with('status')
-                    ->get();
-                    // dd($data[0]->status['status']);
-
-            // $data[1]->status['status'] == "pending" ? dd('1') : dd('2');
-            // $data[1]->status["status"] == "pending" ? dd('1') : dd('2');
-            // dd('stop');
+            $data = Applications::with('status')->get();
 
             return Datatables::of($data)
-            // ->addIndexColumn()
-            ->addColumn('id', function($data) {
-                return "App-".$data->id;
+            ->addColumn('application_code', function($data) {
+                return Admin::getApplicationCode($data->id);
+            })
+            ->addColumn('member_code', function($data) {
+                return Admin::getMemberCode($data->member_id);
             })
             ->addColumn('source_type', function($data) {
                 return $data->source_type;

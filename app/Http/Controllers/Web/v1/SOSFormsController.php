@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web\v1;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Applications;
 use App\Models\ApplicationStatus;
@@ -9,16 +10,37 @@ use App\Models\References;
 use App\Models\CoApplicantDetails;
 use App\Models\Vehicles;
 use App\Models\DisbursementDetail;
+use App\Models\Member;
+use Admin;
 
 class SOSFormsController extends Controller
 {
     //
 
     public function firstForm() {
-        return view('web.v1.forms.FirstForm');
+        $members = Member::get();
+        return view('web.v1.forms.FirstForm', compact('members'));
+    }
+
+    public function getMemberData(Request $request) {
+        $member = Member::whereId($request->memberId)->with('team','branch')->first();
+        $member['fullName'] = Admin::memberFullName($request->memberId);
+        
+        if($member) {
+            return response()->json(['success'=>'Data found successfully.', 'member'=>$member]);
+        } else {
+            return response()->json(['error'=> 'Something went wrong!', 'member'=>array()]);
+        }
     }
 
     public function submitFirstForm(Request $request){
+
+        $application['application_code'] = Admin::applicationCode($request->member_id,$request->team_id,$request->branch_id);
+        $application['system_date'] = $request->system_date ?? NULL;
+        $application['member_id'] = $request->member_id;
+        $application['team_id'] = $request->team_id;
+        $application['branch_id'] = $request->branch_id;
+
         //source
         $application['source_type'] = $request->source_type ?? NULL;
         $application['source_name'] = $request->source_name ?? NULL;

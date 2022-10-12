@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApplicationStatusesTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateApplicationStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('application_statuses', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('application_id')->unsigned();
-            $table->enum('status',['pending','approved','rejected','relogin','vehicle_change','logout'])->default('pending')->nullable();
+            $table->string('team_code')->nullable();
+            $table->string('team_name')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             // $table->softDeletes('deleted_at');
@@ -31,6 +31,6 @@ class CreateApplicationStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('application_statuses');
+        Schema::dropIfExists('teams');
     }
 }
