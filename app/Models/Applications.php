@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Applications extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     public function status() {
         return $this->hasOne(ApplicationStatus::class, 'application_id', 'id');
@@ -24,4 +25,5 @@ class Applications extends Model
     public function vehicle() {
         return $this->hasOne(Vehicles::class, 'application_id', 'id');
     }
+
 }

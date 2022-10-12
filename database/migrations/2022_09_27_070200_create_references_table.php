@@ -22,7 +22,8 @@ class CreateReferencesTable extends Migration
             $table->enum('relationship',['husbund','wife','son','daughter','uncle','father','mother'])->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-            $table->softDeletes('deleted_at');
+            // $table->softDeletes('deleted_at');
+            $table->softDeletes();
         });
     }
 

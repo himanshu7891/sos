@@ -1,15 +1,6 @@
-@extends('layouts.app')
+@extends('web.v1.common.app')
 
 @section('content')
-
-<style>
-    label.error {
-        color: red;
-    }
-    span.required {
-        color: red;
-    }
-</style>
 
     <div class="container">
         <div id="ajax-msg"></div>
@@ -17,6 +8,70 @@
             <form action="{{ route('firstForm.submit') }}" method="post" class="py-2" id="first-form">
                 @csrf
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <label for="">Date</label>
+                                <span class="required">*</span>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <input type="date" class="form-control"
+                                            name="system_date"
+                                            id="system_date" placeholder="Date" 
+                                            value="<?php echo date('Y-m-d'); ?>" 
+                                            aria-label="Date" readonly/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <label for="">Member Code:</label>
+                                <span class="required">*</span>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <select class="form-control form-select"
+                                            name="member_id"
+                                            id="member_id">
+                                            <option value="">Select Member</option>
+                                            @if(isset($members) && !empty($members))
+                                                @foreach($members as $key => $row)
+                                                    <option value="{{$row->id}}">{{$row->member_code}} ({{Admin::memberFullName($row->id)}})</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <label for="">Member Name:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" id="member_name" name="member_name" class="form-control"
+                                            placeholder="Member Name" aria-label="Member Name" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <label for="">Team Code:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" id="team_code" name="team_code" class="form-control"
+                                            placeholder="Team Code" aria-label="Team Code" readonly />
+                                        <input type="hidden" name="team_id" id="team_id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <label for="">Branch Code:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <input type="text" id="branch_code" name="branch_code" class="form-control"
+                                            placeholder="Branch Code" aria-label="Branch Code" readonly />
+                                        <input type="hidden" name="branch_id" id="branch_id">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Source Start -->
                     <div class="col-md-12">
                         <h3>Source (DD-1)</h3>
@@ -1150,11 +1205,57 @@
         }
     });
 
+    $(document).on("change","#member_id", function(e) {
+        var memberId = $(this).val();
+        if(memberId) {
+            $.ajax({
+                url: "{{ route('get.member.data') }}",
+                type: "POST",
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                },
+                data: {
+                    memberId: memberId
+                },
+                success: function(data) {
+                    console.log('data',data);
+                    console.log('data1',data.member.member_code);
+                    if($.isEmptyObject(data.error)) {
+                        $("#member_name").val(data.member.fullName);
+                        $("#team_code").val(data.member.team.team_code);
+                        $("#team_id").val(data.member.team_id);
+                        $("#branch_code").val(data.member.branch.branch_code);
+                        $("#branch_id").val(data.member.branch_id);
+                    }
+                }
+            });
+        } else {
+            $("#member_name").val('');
+            $("#team_code").val('');
+            $("#team_id").val('');
+            $("#branch_code").val('');
+            $("#branch_id").val('');
+        }
+    });
+
     var firstForm = $("#first-form");
     firstForm.submit(function(e) {
         e.preventDefault();
         firstForm.validate({
             rules: {
+                system_date: {
+                    required: true
+                },
+                member_id: {
+                    required: true
+                },
+                team_id: {
+                    required: true
+                },
+                branch_id: {
+                    required: true
+                },
+
                 source_type: {
                     required: true
                 },
@@ -1336,6 +1437,19 @@
                 }
             },
             messages: {
+                system_date: {
+                    required: "Date is required."
+                },
+                member_id: {
+                    required: "Member Code is required."
+                },
+                team_id: {
+                    required: "Team Code is required."
+                },
+                branch_id: {
+                    required: "Branch Code is required."
+                },
+
                 source_type: {
                     required: "Source DD is required."
                 },

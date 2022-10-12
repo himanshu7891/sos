@@ -11,7 +11,8 @@
                         <table class="table table-striped table-boardered application-datatable">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>Application Code</th>
+                                    <th>Member Code</th>
                                     <th>Source Type</th>
                                     <th>Source Name</th>
                                     <th>Source Email</th>
@@ -42,7 +43,8 @@
             serverSide: true,
             ajax: "{{ route('application.index') }}",
             columns: [
-                {data: 'id', name: 'id'},
+                {data: 'application_code', name: 'application_code'},
+                {data: 'member_code', name: 'member_code'},
                 {data: 'source_type', name: 'source_type'},
                 {data: 'source_name', name: 'source_name'},
                 {data: 'source_email', name: 'source_email'},

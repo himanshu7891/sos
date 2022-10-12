@@ -1,15 +1,6 @@
-@extends('layouts.app')
+@extends('web.v1.common.app')
 
 @section('content')
-
-<style>
-    label.error {
-        color: red;
-    }
-    span.required {
-        color: red;
-    }
-</style>
 
 <div class="container">
 

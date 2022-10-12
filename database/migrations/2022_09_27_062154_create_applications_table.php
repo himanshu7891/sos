@@ -16,6 +16,12 @@ class CreateApplicationsTable extends Migration
         Schema::create('applications', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->string('application_code')->nullable();
+            $table->date('system_date')->nullable();
+            $table->integer('member_id')->nullable();
+            $table->integer('team_id')->unsigned();
+            $table->integer('branch_id')->unsigned();
+
             //source
             $table->enum('source_type',['telecaller','broker','direct','refferal'])->nullable();
             $table->string('source_name')->nullable();
@@ -66,7 +72,8 @@ class CreateApplicationsTable extends Migration
             
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-            $table->softDeletes('deleted_at');
+            // $table->softDeletes('deleted_at');
+            $table->softDeletes();
         });
     }
 

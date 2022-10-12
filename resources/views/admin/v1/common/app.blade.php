@@ -16,8 +16,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- sweetalert -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @include('admin.v1.common.css')
+
 </head>
 <body>
     <div id="app">
@@ -82,11 +88,56 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- validation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
+    <!-- datatables -->
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // sweet alert
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                // timer: 7000,
+                showCancelButton: true,
+            });
+
+            var SimpleToast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 7000,
+            });
+
+            @if (Session:: has('alert-error'))
+                $(document).ready(function (e) {
+                    SimpleToast.fire({
+                        icon: 'error',
+                        title: '{{ Session::get('alert-error') }}',
+                        showCloseButton: true
+                    });
+                });
+            @endif
+
+            @if (Session:: has('alert-success'))
+                $(document).ready(function (e) {
+                    SimpleToast.fire({
+                        icon: 'success',
+                        title: '{{ Session::get('alert-success') }}',
+                        showCloseButton: true
+                    });
+                });
+            @endif
+        });
+    </script>
+    
     @yield("scripts")
     
 </body>
