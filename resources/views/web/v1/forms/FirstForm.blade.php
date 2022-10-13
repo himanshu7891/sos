@@ -5,10 +5,26 @@
     <div class="container">
         <div id="ajax-msg"></div>
         <div class="card container">
+            <div class="row">
+                <ul class="nav justify-content-center nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#new-application">Application</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#person-details">Personal Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loan-details">Loan Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vehicle-details">Vehicle Details</a>
+                    </li>
+                </ul>
+            </div>
             <form action="{{ route('firstForm.submit') }}" method="post" class="py-2" id="first-form">
                 @csrf
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="new-application">
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label for="">Date</label>
@@ -203,7 +219,7 @@
                     <!-- Business Detail End -->
                     <hr />
                     <!-- Person Detail Start -->
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="person-details">
                         <h5><u>Person Details</u></h5>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
@@ -405,7 +421,7 @@
                     <!-- Resident Detail End -->
                     <hr />
                     <!-- Office Details Start -->
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="office-details">
                         <h5><u>Office Details</u></h5>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
@@ -480,6 +496,59 @@
                         </div>
                     </div>
                     <!-- Office Details End -->
+                    <hr />
+                    <!-- Product Start -->
+                    <div class="col-md-12" id="loan-details">
+                        <h5><u>Loan Details</u></h5>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <label for="">Loan Type:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <select name="product_type" id="product_type"
+                                            class="form-select">
+                                            <option value="auto_loan">Auto Loan</option>
+                                            <option value="commercial_vehicle">Commercial Vehicle</option>
+                                            <option value="home_loan">Home Loan</option>
+                                            <option value="personal_loan">Personal Loan</option>
+                                            <option value="business_loan">Business Loan</option>
+                                            <option value="gold_loan">Gold Loan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6" id="auto-loan">
+                                <label for="">Auto Loan:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <select name="autoloan_type" id="autoloan_type"
+                                            class="form-select">
+                                            <option value="new">New</option>
+                                            <option value="used">Used</option>
+                                            <option value="refinance">Refinance</option>
+                                            <option value="purchased">Purchased</option>
+                                            <option value="bt">BT</option>
+                                            <option value="bt_topup">BT Top Up</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6" id="home-loan">
+                                <label for="">Home Loan:</label>
+                                <div class="mb-3">
+                                    <div class="input-group">
+                                        <select name="homeloan_type" id="homeloan_type"
+                                            class="form-select">
+                                            <option value="lap">LAP</option>
+                                            <option value="bt_topup">BT Top Up</option>
+                                            <option value="hl">HL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product End -->
                     <hr />
                     <!-- References (Used/broker ref) Start -->
                     <div class="col-md-12">
@@ -595,7 +664,7 @@
                     <!-- References (Used/broker ref) End -->
                     <hr />
                     <!-- Co- applicant Details Start -->
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="co-applicant-details">
                         <h5><u>Co-applicant Details</u></h5>
                         <h5><u>Option 1</u></h5>
                         <div class="row">
@@ -864,61 +933,8 @@
                     </div>
                     <!-- Co- applicant Details End -->
                     <hr />
-                    <!-- Product Start -->
-                    <div class="col-md-12">
-                        <h5><u>Product</u></h5>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <label for="">Product Type:</label>
-                                <div class="mb-3">
-                                    <div class="input-group">
-                                        <select name="product_type" id="product_type"
-                                            class="form-select">
-                                            <option value="auto_loan">Auto Loan</option>
-                                            <option value="commercial_vehicle">Commercial Vehicle</option>
-                                            <option value="home_loan">Home Loan</option>
-                                            <option value="personal_loan">Personal Loan</option>
-                                            <option value="business_loan">Business Loan</option>
-                                            <option value="gold_loan">Gold Loan</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6" id="auto-loan">
-                                <label for="">Auto Loan:</label>
-                                <div class="mb-3">
-                                    <div class="input-group">
-                                        <select name="autoloan_type" id="autoloan_type"
-                                            class="form-select">
-                                            <option value="new">New</option>
-                                            <option value="used">Used</option>
-                                            <option value="refinance">Refinance</option>
-                                            <option value="purchased">Purchased</option>
-                                            <option value="bt">BT</option>
-                                            <option value="bt_topup">BT Top Up</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-6" id="home-loan">
-                                <label for="">Home Loan:</label>
-                                <div class="mb-3">
-                                    <div class="input-group">
-                                        <select name="homeloan_type" id="homeloan_type"
-                                            class="form-select">
-                                            <option value="lap">LAP</option>
-                                            <option value="bt_topup">BT Top Up</option>
-                                            <option value="hl">HL</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product End -->
-                    <hr />
                     <!-- Vehicle Details Start -->
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="vehicle-details">
                         <h5><u>Vehicle Details</u></h5>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
@@ -1145,10 +1161,13 @@
                 </div>                           
             </form>
         </div>
+        <a id="back-to-top" href="#" class="btn btn-success btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
     </div>
 @endsection
 
 @section("scripts")
+
+@include("web.v1.common.js")
 
 <script>
 
